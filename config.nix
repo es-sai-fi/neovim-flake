@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, lib, pkgs, ... }:
 {
   inherit (inputs.neovim-nightly.packages.${pkgs.stdenv.system}) neovim;
 
