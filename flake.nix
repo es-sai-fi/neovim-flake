@@ -29,7 +29,5 @@
       packages.${system} = {
         default = mnw.lib.wrap pkgs.neovim ./config.nix;
       };
-
-      homeManagerModules.default = mnw.homeManagerModules.mnw;
     };
 }
