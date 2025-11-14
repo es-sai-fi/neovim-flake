@@ -57,7 +57,6 @@
 
       lua-language-server
       stylua
-      luacheck
 
       basedpyright
       ruff
