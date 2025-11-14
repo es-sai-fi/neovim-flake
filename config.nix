@@ -74,5 +74,6 @@
 
       ripgrep
       fd
+      ;
   };
 }
