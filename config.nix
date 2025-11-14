@@ -13,6 +13,7 @@
         ./lazy
       ];
     };
+    impure = "~/Projects/nvim-flake";
   };
 
   plugins = {
