@@ -1,4 +1,4 @@
-require("colorscheme")
-require("options")
-require("autocmds")
-require("keymaps")
+require("config.colorscheme")
+require("config.options")
+require("config.autocmds")
+require("config.keymaps")
