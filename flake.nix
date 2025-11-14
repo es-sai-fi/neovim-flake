@@ -17,17 +17,15 @@
       neovim-nightly-overlay,
       self,
       ...
-    }:
+    } @inputs:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [ neovim-nightly-overlay.overlays.default ];
-      };
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       packages.${system} = {
-        default = mnw.lib.uncheckedWrap pkgs.neovim ./config.nix;
+        default = self.packages.${system}.neovim;
+	neovim = mnw.lib.wrap { inherit pkgs inputs; } ./config.nix;
       };
     };
 }

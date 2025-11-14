@@ -1,5 +1,7 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
+  inherit (inputs.neovim-nightly.packages.${pkgs.stdenv.system}) neovim;
+
   initLua = ''
     require('config')
     require('lz.n').load('lazy')
