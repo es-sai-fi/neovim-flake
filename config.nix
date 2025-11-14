@@ -15,7 +15,7 @@
         ./lazy
       ];
     };
-    impure = "~/Projects/nvim-flake";
+    impure = "~/Projects/neovim-flake";
   };
 
   plugins = {
