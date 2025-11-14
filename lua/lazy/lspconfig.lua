@@ -1,6 +1,6 @@
 return {
 	"nvim-lspconfig",
-	event = { "BufReadPre", "BufNewFile" }
+	event = { "BufReadPre", "BufNewFile" },
   config = function()
     vim.lsp.enable("lua-language-server")
 		vim.lsp.enable("nil_ls")
