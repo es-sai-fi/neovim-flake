@@ -14,6 +14,7 @@
     {
       nixpkgs,
       mnw,
+      neovim-nightly-overlay,
       self,
       ...
     }:
