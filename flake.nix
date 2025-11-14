@@ -26,7 +26,7 @@
       };
     in
     {
-      default = mnw.lib.wrap pkgs {
+      packages.${system}.default = mnw.lib.wrap pkgs {
         inherit (pkgs) neovim;
 
         initLua = ''
@@ -46,7 +46,7 @@
             pkgs.vimPlugins.oil-nvim
             pkgs.vimPlugins.conform-nvim
             pkgs.vimPlugins.nvim-lint
-            pkgs.vimPlugins.flash
+            pkgs.vimPlugins.flash-nvim
             pkgs.vimPlugins.yazi-nvim
             pkgs.vimPlugins.which-key-nvim
             pkgs.vimPlugins.mini-surround
