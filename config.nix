@@ -32,6 +32,8 @@
         p.c
         p.cpp
         p.lua
+        p.html
+        p.css
       ]))
     ];
 
@@ -73,6 +75,8 @@
 
       ripgrep
       fd
+      git
+      gh
       ;
   };
 }
