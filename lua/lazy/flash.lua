@@ -1,5 +1,5 @@
 return {
-	"folke/flash.nvim",
+	"flash.nvim",
 	keys = {
 		{
 			"s",
