@@ -30,8 +30,6 @@
         default = mnw.lib.wrap pkgs.neovim ./config.nix;
       };
 
-      homeManagerModules = {
-        default = mnw.homeManagerModules.mnw;
-      };
+      homeManagerModules.default = mnw.homeManagerModules.mnw;
     };
 }
