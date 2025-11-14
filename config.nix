@@ -1,6 +1,6 @@
 { inputs, lib, pkgs, ... }:
 {
-  inherit (inputs.neovim-nightly.packages.${pkgs.stdenv.system}) neovim;
+  inherit (inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.system}) neovim;
 
   initLua = ''
     require('config')
