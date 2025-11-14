@@ -48,4 +48,31 @@
       pkgs.vimPlugins.nvim-lspconfig
     ];
   };
+
+
+  extraBinPath = builtins.attrValues {
+    inherit (pkgs)
+      alejandra
+      nil
+
+      lua-language-server
+      stylua
+      luacheck
+
+      basedpyright
+      ruff
+
+      vtsls
+      biome
+      
+      rust-analyzer
+      clippy
+      rustfmt
+
+      golangci-lint
+      gopls
+
+      ripgrep
+      fd
+  };
 }
