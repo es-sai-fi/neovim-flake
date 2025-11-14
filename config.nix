@@ -11,8 +11,7 @@
     pure = lib.fileset.toSource {
       root = ./.;
       fileset = lib.fileset.unions [
-        ./config
-        ./lazy
+        ./lua
       ];
     };
     impure = "~/Projects/neovim-flake";
