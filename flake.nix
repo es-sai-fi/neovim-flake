@@ -27,7 +27,7 @@
     in
     {
       packages.${system} = {
-        default = mnw.lib.wrap pkgs.neovim ./config.nix;
+        default = mnw.lib.uncheckedWrap pkgs.neovim ./config.nix;
       };
     };
 }
