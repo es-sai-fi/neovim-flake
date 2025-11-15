@@ -22,14 +22,12 @@ opt.winminwidth = 5
 opt.wrap = false
 opt.linebreak = true
 opt.wildmode = "longest:full,full"
-
 opt.swapfile = false
 opt.backup = false
 opt.writebackup = false
 opt.undofile = true
 opt.undolevels = 10000
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "folds" }
-
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
@@ -39,14 +37,12 @@ opt.virtualedit = "block"
 opt.conceallevel = 2
 opt.cmdheight = 1
 opt.pumheight = 10
-
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.tabstop = 2
 opt.smartindent = true
 opt.autoindent = true
 opt.shiftround = true
-
 opt.ignorecase = true
 opt.smartcase = true
 opt.incsearch = true
@@ -55,13 +51,11 @@ opt.inccommand = "nosplit"
 opt.jumpoptions = "view"
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
-
 opt.updatetime = 250
 opt.timeoutlen = 400
 opt.smoothscroll = true
 opt.formatoptions:remove({ "c", "r", "o" })
-
 opt.completeopt = { "menu", "menuone", "noselect" }
 opt.shortmess:append("c")
-
 opt.scrolloff = 4
+opt.hidden = false
