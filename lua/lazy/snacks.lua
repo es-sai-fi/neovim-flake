@@ -518,8 +518,8 @@ return {
 	before = function()
 		local lzn = require("lz.n")
 
-		lzn.load("mini.icons")
-		lzn.load("nvim-web-devicons")
+		lzn.triger_load("mini.icons")
+		lzn.trigger_load("nvim-web-devicons")
 	end,
 	after = function()
 		require("snacks").setup({
