@@ -69,7 +69,7 @@
       stylua
       basedpyright
       ruff
-      vtsls
+      typescript-language-server
       biome
       rust-analyzer
       clippy
