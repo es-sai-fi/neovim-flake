@@ -43,6 +43,7 @@
     ];
 
     opt = with pkgs.vimPlugins; [
+      blink-cmp
       mini-icons
       nvim-web-devicons
       bufferline-nvim
