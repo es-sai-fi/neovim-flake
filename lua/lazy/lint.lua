@@ -4,21 +4,19 @@ return {
 	after = function()
 		local lint = require("lint")
 
-		lint.setup({
-			linters_by_ft = {
-				lua = { "luacheck" },
-				go = { "golangcilint" },
-				rust = { "clippy" },
-				python = { "ruff" },
-				javascript = { "biome" },
-				typescript = { "biome" },
-				json = { "biome" },
-				jsonc = { "biome" },
-				html = { "biome" },
-				css = { "biome" },
-				nix = { "statix" },
-			},
-		})
+		lint.linters_by_ft = {
+			lua = { "luacheck" },
+			go = { "golangcilint" },
+			rust = { "clippy" },
+			python = { "ruff" },
+			javascript = { "biome" },
+			typescript = { "biome" },
+			json = { "biome" },
+			jsonc = { "biome" },
+			html = { "biome" },
+			css = { "biome" },
+			nix = { "statix" },
+		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
