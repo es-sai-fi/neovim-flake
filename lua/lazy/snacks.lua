@@ -1,125 +1,6 @@
 return {
 	"snacks.nvim",
 	priority = 1000,
-	lazy = false,
-	opts = {
-		bigfile = { enabled = true },
-		dashboard = { 
-      enabled = true, 
-      width = 60,
-      row = nil, -- dashboard position. nil for center
-      col = nil, -- dashboard position. nil for center
-      pane_gap = 4, -- empty columns between vertical panes
-      autokeys = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", -- autokey sequence
-      -- These settings are used by some built-in sections
-      preset = {
-        -- Defaults to a picker that supports `fzf-lua`, `telescope.nvim` and `mini.pick`
-        ---@type fun(cmd:string, opts:table)|nil
-        pick = nil,
-        -- Used by the `keys` section to show keymaps.
-        -- Set your custom keymaps here.
-        -- When using a function, the `items` argument are the default keymaps.
-        ---@type snacks.dashboard.Item[]
-        keys = {
-          { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-          { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-          { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-          { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
-          { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
-          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
-        },
-        -- Used by the `header` section
-        header = [[
-    ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
-    ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
-    ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
-    ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
-    ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
-    ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
-      },
-      -- item field formatters
-      formats = {
-        icon = function(item)
-          if item.file and item.icon == "file" or item.icon == "directory" then
-            return Snacks.dashboard.icon(item.file, item.icon)
-          end
-          return { item.icon, width = 2, hl = "icon" }
-        end,
-        footer = { "%s", align = "center" },
-        header = { "%s", align = "center" },
-        file = function(item, ctx)
-          local fname = vim.fn.fnamemodify(item.file, ":~")
-          fname = ctx.width and #fname > ctx.width and vim.fn.pathshorten(fname) or fname
-          if #fname > ctx.width then
-            local dir = vim.fn.fnamemodify(fname, ":h")
-            local file = vim.fn.fnamemodify(fname, ":t")
-            if dir and file then
-              file = file:sub(-(ctx.width - #dir - 2))
-              fname = dir .. "/…" .. file
-            end
-          end
-          local dir, file = fname:match("^(.*)/(.+)$")
-          return dir and { { dir .. "/", hl = "dir" }, { file, hl = "file" } } or { { fname, hl = "file" } }
-        end,
-      },
-      sections = {
-        { section = "header" },
-        { section = "keys", gap = 1, padding = 1 },
-        { section = "startup" },
-      },
-    },
-		explorer = { enabled = false },
-		indent = { enabled = true },
-		input = { enabled = true },
-		notifier = {
-			enabled = true,
-			timeout = 3000,
-		},
-		picker = {
-			enabled = true,
-			picker = {
-				win = {
-					input = {
-						keys = {
-							["<a-s>"] = { "flash", mode = { "n", "i" } },
-							["s"] = { "flash" },
-						},
-					},
-				},
-				actions = {
-					flash = function(picker)
-						require("flash").jump({
-							pattern = "^",
-							label = { after = { 0, 0 } },
-							search = {
-								mode = "search",
-								exclude = {
-									function(win)
-										return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "snacks_picker_list"
-									end,
-								},
-							},
-							action = function(match)
-								local idx = picker.list:row2idx(match.pos[1])
-								picker.list:_move(idx, true, true)
-							end,
-						})
-					end,
-				},
-			},
-		},
-		quickfile = { enabled = true },
-		scope = { enabled = true },
-		scroll = { enabled = true },
-		statuscolumn = { enabled = true },
-		words = { enabled = true },
-		styles = {
-			notification = {
-				-- wo = { wrap = true } -- Wrap notifications
-			},
-		},
-	},
 	keys = {
 		-- Top Pickers & Explorer
 		{
@@ -581,13 +462,6 @@ return {
 			mode = { "n", "v" },
 		},
 		{
-			"<leader>gg",
-			function()
-				Snacks.lazygit()
-			end,
-			desc = "Lazygit",
-		},
-		{
 			"<leader>un",
 			function()
 				Snacks.notifier.hide()
@@ -624,28 +498,9 @@ return {
 			desc = "Prev Reference",
 			mode = { "n", "t" },
 		},
-		{
-			"<leader>N",
-			desc = "Neovim News",
-			function()
-				Snacks.win({
-					file = vim.api.nvim_get_runtime_file("doc/news.txt", false)[1],
-					width = 0.6,
-					height = 0.6,
-					wo = {
-						spell = false,
-						wrap = false,
-						signcolumn = "yes",
-						statuscolumn = " ",
-						conceallevel = 3,
-					},
-				})
-			end,
-		},
 	},
-	init = function()
+	beforeAll = function()
 		vim.api.nvim_create_autocmd("User", {
-			pattern = "VeryLazy",
 			callback = function()
 				-- Create some toggle mappings
 				Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
@@ -664,6 +519,95 @@ return {
 				Snacks.toggle.indent():map("<leader>ug")
 				Snacks.toggle.dim():map("<leader>uD")
 			end,
+		})
+	end,
+	after = function()
+		require("snacks").setup({
+			bigfile = { enabled = true },
+			dashboard = {
+				enabled = true,
+				preset = {
+					keys = {
+						{
+							icon = " ",
+							key = "f",
+							desc = "Find File",
+							action = ":lua Snacks.dashboard.pick('files')",
+						},
+						{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+						{
+							icon = " ",
+							key = "g",
+							desc = "Find Text",
+							action = ":lua Snacks.dashboard.pick('live_grep')",
+						},
+						{
+							icon = " ",
+							key = "r",
+							desc = "Recent Files",
+							action = ":lua Snacks.dashboard.pick('oldfiles')",
+						},
+						{
+							icon = " ",
+							key = "c",
+							desc = "Config",
+							action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+						},
+						{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
+						{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
+					},
+				},
+				sections = {
+					{ section = "header" },
+					{ icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
+					{ icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+					{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+					{ section = "startup" },
+				},
+			},
+			explorer = { enabled = false },
+			indent = { enabled = true },
+			input = { enabled = true },
+			notifier = {
+				enabled = true,
+				timeout = 3000,
+			},
+			picker = {
+				enabled = true,
+				win = {
+					input = {
+						keys = {
+							["<a-s>"] = { "flash", mode = { "n", "i" } },
+							["s"] = { "flash" },
+						},
+					},
+				},
+				actions = {
+					flash = function(picker)
+						require("flash").jump({
+							pattern = "^",
+							label = { after = { 0, 0 } },
+							search = {
+								mode = "search",
+								exclude = {
+									function(win)
+										return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "snacks_picker_list"
+									end,
+								},
+							},
+							action = function(match)
+								local idx = picker.list:row2idx(match.pos[1])
+								picker.list:_move(idx, true, true)
+							end,
+						})
+					end,
+				},
+			},
+			quickfile = { enabled = true },
+			scope = { enabled = true },
+			scroll = { enabled = true },
+			statuscolumn = { enabled = true },
+			words = { enabled = true },
 		})
 	end,
 }
