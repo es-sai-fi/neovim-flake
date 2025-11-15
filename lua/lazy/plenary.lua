@@ -1,6 +1,6 @@
 return {
 	"plenary.nvim",
 	after = function()
-		require("plenary").setup()
+		require("plenary")
 	end,
 }
