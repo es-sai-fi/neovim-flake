@@ -2,7 +2,7 @@ return {
 	"nvim-lint",
 	event = { "BufReadPost", "BufNewFile" },
 	after = function()
-		local lint = require("nvim-lint")
+		local lint = require("lint")
 
 		lint.setup({
 			linters_by_ft = {
