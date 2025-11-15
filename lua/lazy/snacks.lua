@@ -518,7 +518,7 @@ return {
 	before = function()
 		local lzn = require("lz.n")
 
-		lzn.triger_load("mini.icons")
+		lzn.trigger_load("mini.icons")
 		lzn.trigger_load("nvim-web-devicons")
 	end,
 	after = function()
