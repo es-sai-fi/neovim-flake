@@ -305,13 +305,6 @@ return {
 			desc = "Man Pages",
 		},
 		{
-			"<leader>sp",
-			function()
-				Snacks.picker.lazy()
-			end,
-			desc = "Search for Plugin Spec",
-		},
-		{
 			"<leader>sq",
 			function()
 				Snacks.picker.qflist()
@@ -557,13 +550,6 @@ return {
 						{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
 						{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 					},
-				},
-				sections = {
-					{ section = "header" },
-					{ icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
-					{ icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-					{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-					{ section = "startup" },
 				},
 			},
 			explorer = { enabled = false },
