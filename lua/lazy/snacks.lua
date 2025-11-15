@@ -1,6 +1,7 @@
 return {
 	"snacks.nvim",
 	priority = 1000,
+	lazy = false,
 	keys = {
 		-- Top Pickers & Explorer
 		{
