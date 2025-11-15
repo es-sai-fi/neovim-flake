@@ -72,11 +72,6 @@
 
       golangci-lint
       gopls
-
-      ripgrep
-      fd
-      git
-      gh
       ;
   };
 }
