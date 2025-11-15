@@ -1,6 +1,6 @@
 return {
 	"which-key.nvim",
-  keys = {
+	keys = {
 		{
 			"<leader>?",
 			function()
@@ -9,39 +9,40 @@ return {
 			desc = "Buffer Keymaps (which-key)",
 		},
 	},
-	after =  function()
-    local wk = require("which-key")
+	after = function()
+		local wk = require("which-key")
 
 		wk.setup({
-      preset = "helix",
-      spec = {
-        {
-          mode = { "n", "x" },
-          { "<leader><tab>", group = "tabs" },
-          { "<leader>s", group = "grep/search" },
-          { "<leader>p", group = "picker" },
-          { "<leader>f", group = "file/find" },
-          { "<leader>g", group = "git" },
-          { "<leader>u", group = "ui" },
-          { "g", group = "goto" },
-          { "gs", group = "surround" },
-          {
-            "<leader>b",
-            group = "buffer",
-            expand = function()
-              return require("which-key.extras").expand.buf()
-            end,
-          },
-          {
-            "<leader>w",
-            group = "windows",
-            proxy = "<c-w>",
-            expand = function()
-              return require("which-key.extras").expand.win()
-            end,
-          },
-          { "gx", desc = "Open with system app" },
-        },
-      })
-  end,
+			preset = "helix",
+			spec = {
+				{
+					mode = { "n", "x" },
+					{ "<leader><tab>", group = "tabs" },
+					{ "<leader>s", group = "grep/search" },
+					{ "<leader>p", group = "picker" },
+					{ "<leader>f", group = "file/find" },
+					{ "<leader>g", group = "git" },
+					{ "<leader>u", group = "ui" },
+					{ "g", group = "goto" },
+					{ "gs", group = "surround" },
+					{
+						"<leader>b",
+						group = "buffer",
+						expand = function()
+							return require("which-key.extras").expand.buf()
+						end,
+					},
+					{
+						"<leader>w",
+						group = "windows",
+						proxy = "<c-w>",
+						expand = function()
+							return require("which-key.extras").expand.win()
+						end,
+					},
+					{ "gx", desc = "Open with system app" },
+				},
+			},
+		})
+	end,
 }
