@@ -22,6 +22,7 @@
       pkgs.vimPlugins.lz-n
       pkgs.vimPlugins.tokyonight-nvim
       pkgs.vimPlugins.snacks-nvim
+      pkgs.vimPlugins.which-key-nvim
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
         p.nix
         p.python
@@ -44,7 +45,6 @@
       pkgs.vimPlugins.nvim-lint
       pkgs.vimPlugins.flash-nvim
       pkgs.vimPlugins.yazi-nvim
-      pkgs.vimPlugins.which-key-nvim
       pkgs.vimPlugins.mini-surround
       pkgs.vimPlugins.mini-pairs
       pkgs.vimPlugins.nvim-lspconfig

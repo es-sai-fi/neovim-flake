@@ -1,6 +1,5 @@
 return {
 	"which-key.nvim",
-  event = { "VimEnter" },
 	opts = {
 		preset = "helix",
 		defaults = {},
