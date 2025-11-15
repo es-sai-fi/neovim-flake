@@ -26,10 +26,12 @@ return {
 					{ "<leader>g", group = "git" },
 					{ "<leader>u", group = "ui" },
 					{ "<leader>y", group = "yazi" },
+					{ "<leader>x", group = "diagnostics" },
+					{ "<leader>c", group = "code" },
 					{ "g", group = "goto" },
 					{ "gs", group = "surround" },
 					{
-						"<lead>b",
+						"<leader>b",
 						group = "buffer",
 						expand = function()
 							return require("which-key.extras").expand.buf()
