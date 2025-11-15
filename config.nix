@@ -7,6 +7,7 @@
   inherit (inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.system}) neovim;
 
   initLua = ''
+    vim.loader.enable()
     require('config')
     require('lz.n').load('lazy')
   '';
@@ -42,6 +43,11 @@
         p.css
       ]))
     ];
+
+    startAttrs = {
+      plenary-nvim = null;
+      nui-nvim = null;
+    };
 
     opt = with pkgs.vimPlugins; [
       trouble-nvim
