@@ -18,7 +18,7 @@ return {
         css = { "biome" },
         nix = { "statix" },
       }
-    }
+    })
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
@@ -27,6 +27,6 @@ return {
       callback = function()
         lint.try_lint()
       end,
-    })
+    }
   end,
 }

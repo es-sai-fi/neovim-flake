@@ -9,10 +9,11 @@ return {
 			desc = "Buffer Keymaps (which-key)",
 		},
 	},
-	after =  function ()
-		require("which-key").setup({
+	after =  function()
+    local wk = require("which-key")
+
+		wk.setup({
       preset = "helix",
-      defaults = {},
       spec = {
         {
           mode = { "n", "x" },
