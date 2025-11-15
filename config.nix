@@ -44,19 +44,12 @@
       ]))
     ];
 
-    startAttrs = {
-      plenary-nvim = null;
-      nui-nvim = null;
-    };
-
     opt = with pkgs.vimPlugins; [
       trouble-nvim
       mini-hipatterns
       todo-comments-nvim
-      plenary-nvim
       noice-nvim
       nvim-notify
-      nui-nvim
       blink-cmp
       mini-icons
       nvim-web-devicons
