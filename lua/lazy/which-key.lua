@@ -13,17 +13,14 @@ return {
 		local wk = require("which-key")
 
 		wk.add({
-			{
-				mode = { "n", "x" },
-				{ "<leader><tab>", group = "tabs" },
-				{ "<leader>s", group = "grep/search" },
-				{ "<leader>p", group = "picker" },
-				{ "<leader>f", group = "file/find" },
-				{ "<leader>g", group = "git" },
-				{ "<leader>u", group = "ui" },
-				{ "g", group = "goto" },
-				{ "gs", group = "surround" },
-			},
+			{ "<leader><tab>", group = "tabs" },
+			{ "<leader>s", group = "grep/search" },
+			{ "<leader>p", group = "picker" },
+			{ "<leader>f", group = "file/find" },
+			{ "<leader>g", group = "git" },
+			{ "<leader>u", group = "ui" },
+			{ "g", group = "goto" },
+			{ "gs", group = "surround" },
 			{
 				"<leader>b",
 				group = "buffer",
