@@ -44,6 +44,7 @@
     ];
 
     opt = with pkgs.vimPlugins; [
+      trouble-nvim
       mini-hipatterns
       todo-comments-nvim
       plenary-nvim
