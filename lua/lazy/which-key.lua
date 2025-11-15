@@ -14,6 +14,7 @@ return {
 		local wk = require("which-key")
 
 		wk.setup({
+			delay = 0,
 			preset = "helix",
 			spec = {
 				{

@@ -1,5 +1,5 @@
 return {
-	"todo-comments",
+	"todo-comments.nvim",
 	event = { "BufReadPost", "BufNewFile" },
 	before = function()
 		local lzn = require("lz.n")
@@ -7,6 +7,6 @@ return {
 		lzn.trigger_load("plenary")
 	end,
 	after = function()
-		require("todo-comments")
+		require("todo-comments").setup()
 	end,
 }
