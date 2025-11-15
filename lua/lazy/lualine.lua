@@ -1,6 +1,6 @@
 return {
 	"lualine.nvim",
-	event = { "UIEnter" },
+	event = { "BufReadPre", "BufNewFile" },
 	after = function()
 		local lualine = require("lualine")
 
