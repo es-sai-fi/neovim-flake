@@ -4,13 +4,17 @@ return {
 	before = function()
 		local lzn = require("lz.n")
 
-		lzn.trigger_load("blink.cmp")
+		lzn.trigger_load("blink")
 	end,
 	after = function()
+		vim.lsp.inlay_hints.enable(false)
 		vim.lsp.enable("lua_ls")
 		vim.lsp.enable("nil_ls")
 		vim.lsp.enable("gopls")
 		vim.lsp.enable("basedpyright")
 		vim.lsp.enable("ts_ls")
+		vim.lsp.config("*", {
+			capabilities = require("blink.cmp").get_lsp_capabilities(),
+		})
 	end,
 }

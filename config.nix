@@ -44,6 +44,11 @@
     ];
 
     opt = with pkgs.vimPlugins; [
+      mini-hipatterns
+      todo-comments-nvim
+      plenary-nvim
+      nvim-notify
+      nui-nvim
       blink-cmp
       mini-icons
       nvim-web-devicons
