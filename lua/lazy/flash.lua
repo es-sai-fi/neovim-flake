@@ -1,6 +1,6 @@
 return {
 	"flash.nvim",
-	keys = {
+  keys = {
 		{
 			"s",
 			mode = { "n", "x", "o" },
