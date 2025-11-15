@@ -1,5 +1,6 @@
 return {
 	"which-key.nvim",
+	lazy = false,
 	keys = {
 		{
 			"<leader>?",
@@ -12,31 +13,37 @@ return {
 	after = function()
 		local wk = require("which-key")
 
-		wk.add({
-			{ "<leader><tab>", group = "tabs" },
-			{ "<leader>s", group = "grep/search" },
-			{ "<leader>p", group = "picker" },
-			{ "<leader>f", group = "file/find" },
-			{ "<leader>g", group = "git" },
-			{ "<leader>u", group = "ui" },
-			{ "g", group = "goto" },
-			{ "gs", group = "surround" },
-			{
-				"<leader>b",
-				group = "buffer",
-				expand = function()
-					return require("which-key.extras").expand.buf()
-				end,
+		wk.setup({
+			preset = "helix",
+			spec = {
+				{
+					mode = { "n", "x" },
+					{ "<leader><tab>", group = "tabs" },
+					{ "<leader>s", group = "grep/search" },
+					{ "<leader>p", group = "picker" },
+					{ "<leader>f", group = "file/find" },
+					{ "<leader>g", group = "git" },
+					{ "<leader>u", group = "ui" },
+					{ "g", group = "goto" },
+					{ "gs", group = "surround" },
+					{
+						"<leader>b",
+						group = "buffer",
+						expand = function()
+							return require("which-key.extras").expand.buf()
+						end,
+					},
+					{
+						"<leader>w",
+						group = "windows",
+						proxy = "<c-w>",
+						expand = function()
+							return require("which-key.extras").expand.win()
+						end,
+					},
+					{ "gx", desc = "Open with system app" },
+				},
 			},
-			{
-				"<leader>w",
-				group = "windows",
-				proxy = "<c-w>",
-				expand = function()
-					return require("which-key.extras").expand.win()
-				end,
-			},
-			{ "gx", desc = "Open with system app" },
 		})
 	end,
 }
