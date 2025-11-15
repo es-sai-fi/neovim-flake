@@ -27,6 +27,7 @@
       tokyonight-nvim
       snacks-nvim
       which-key-nvim
+      oil-nvim
       (nvim-treesitter.withPlugins (p: [
         p.nix
         p.python
@@ -49,7 +50,6 @@
       bufferline-nvim
       lualine-nvim
       gitsigns-nvim
-      oil-nvim
       conform-nvim
       nvim-lint
       flash-nvim
