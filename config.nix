@@ -25,6 +25,7 @@
   plugins = {
     start = with pkgs.vimPlugins; [
       lz-n
+      tokyonight-nvim
       snacks-nvim
       which-key-nvim
       (nvim-treesitter.withPlugins (p: [
@@ -43,7 +44,6 @@
     ];
 
     opt = with pkgs.vimPlugins; [
-      tokyonight-nvim
       oil-nvim
       trouble-nvim
       mini-hipatterns
