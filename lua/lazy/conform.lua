@@ -1,6 +1,6 @@
 return {
 	"conform.nvim",
-	event = { "BufWritePre" },
+	event = { "BufReadPre", "BufNewFile" },
 	after = function()
 		local conform = require("conform")
 
@@ -23,5 +23,13 @@ return {
 				lsp_format = "fallback",
 			},
 		})
+
+		vim.keymap.set({ "n", "v" }, "<leader>cf", function()
+			conform.format({
+				lsp_fallback = true,
+				async = false,
+				timeout_ms = 2000,
+			})
+		end, { desc = "Format file or range (in visual mode)" })
 	end,
 }
