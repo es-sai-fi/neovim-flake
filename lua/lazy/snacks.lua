@@ -515,6 +515,12 @@ return {
 			end,
 		})
 	end,
+	before = function()
+		local lzn = require("lz.n")
+
+		lzn.load("mini.icons")
+		lzn.load("nvim-web-devicons")
+	end,
 	after = function()
 		require("snacks").setup({
 			bigfile = { enabled = true },
@@ -540,12 +546,6 @@ return {
 							key = "r",
 							desc = "Recent Files",
 							action = ":lua Snacks.dashboard.pick('oldfiles')",
-						},
-						{
-							icon = " ",
-							key = "c",
-							desc = "Config",
-							action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
 						},
 						{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
 						{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
