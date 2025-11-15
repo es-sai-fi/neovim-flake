@@ -47,6 +47,7 @@
       mini-hipatterns
       todo-comments-nvim
       plenary-nvim
+      noice-nvim
       nvim-notify
       nui-nvim
       blink-cmp

@@ -1,12 +1,12 @@
 return {
 	"todo-comments",
-	event = { "BufReadPost", "ButNewFile" },
+	event = { "BufReadPost", "BufNewFile" },
 	before = function()
 		local lzn = require("lz.n")
 
 		lzn.trigger_loard("plenary")
 	end,
 	after = function()
-		require("todo-comments").setup({})
+		require("todo-comments").setup()
 	end,
 }

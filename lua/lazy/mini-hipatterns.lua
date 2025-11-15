@@ -1,6 +1,6 @@
 return {
 	"mini.hipatterns",
 	after = function()
-		require("mini.hipatterns").setup({})
+		require("mini.hipatterns").setup()
 	end,
 }
