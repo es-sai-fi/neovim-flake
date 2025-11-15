@@ -44,6 +44,7 @@
     ];
 
     opt = with pkgs.vimPlugins; [
+      rustaceanvim
       oil-nvim
       trouble-nvim
       mini-hipatterns
