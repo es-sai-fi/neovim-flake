@@ -1,10 +1,10 @@
 return {
 	"conform.nvim",
 	event = { "BufWritePre" },
-	config = function()
+	after = function()
     local conform = require("conform")
 
-		conform.setup({
+    conform.setup({
       formatters_by_ft = {
 			  lua = { "stylua" },
 			  go = { "gofmt" },
