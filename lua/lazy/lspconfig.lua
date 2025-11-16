@@ -13,6 +13,13 @@ return {
 		vim.lsp.enable("basedpyright")
 		vim.lsp.enable("ts_ls")
 		vim.lsp.inlay_hint.enable(true)
+		vim.diagnostic.config({
+			virtual_text = {
+				spacing = 2,
+				source = "if_many",
+				prefix = "●",
+			},
+		})
 		vim.lsp.config("*", {
 			capabilities = require("blink.cmp").get_lsp_capabilities(),
 			keys = {
