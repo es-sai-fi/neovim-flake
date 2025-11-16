@@ -72,6 +72,7 @@
       (pkgs)
       alejandra
       nil
+      statix
       lua-language-server
       stylua
       basedpyright
