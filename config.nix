@@ -83,6 +83,7 @@
       rustfmt
       golangci-lint
       gopls
+      gofumpt
       ;
   };
 }
