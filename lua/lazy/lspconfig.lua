@@ -77,7 +77,6 @@ return {
 					has = { "workspace/didRenameFiles", "workspace/willRenameFiles" },
 				},
 				{ "<leader>cr", vim.lsp.buf.rename, desc = "Rename", has = "rename" },
-				{ "<leader>cA", LazyVim.lsp.action.source, desc = "Source Action", has = "codeAction" },
 				{
 					"]]",
 					function()
