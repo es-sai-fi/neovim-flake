@@ -123,7 +123,7 @@ return {
 				},
 			},
 		})
-		vim.lsp.cofig("lua_ls", {
+		vim.lsp.config("lua_ls", {
 			telemetry = { enable = false },
 			workspace = {
 				checkThirdParty = false,
