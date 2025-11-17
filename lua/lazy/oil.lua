@@ -2,7 +2,7 @@ return {
 	"oil.nvim",
 	lazy = false,
 	keys = {
-		{ "<leader>e", "<CMD>Oil --float<CR>", desc = "Toggle Oil" },
+		{ "<leader>e", "<CMD>Oil<CR>", desc = "Open Oil" },
 	},
 	before = function()
 		require("lz.n").trigger_load("oil-git.nvim")
