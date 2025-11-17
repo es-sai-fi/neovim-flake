@@ -25,7 +25,7 @@
   plugins = {
     start = with pkgs.vimPlugins; [
       lz-n
-      kanagawa-nvim
+      tokyonight-nvim
       snacks-nvim
       which-key-nvim
       oil-nvim
