@@ -4,9 +4,6 @@ return {
 	keys = {
 		{ "<leader>e", "<CMD>Oil --float<CR>", desc = "Toggle Oil" },
 	},
-	before = function()
-		require("lz.n").trigger_load("oil-git.nvim")
-	end,
 	after = function()
 		-- helper function to parse output
 		local function parse_output(proc)

@@ -46,7 +46,6 @@
     startAttrs = {
       "plenary.nvim" = null;
       "nui-nvim" = null;
-      "oil-nvim" = null;
     };
 
     opt = with pkgs.vimPlugins; [
@@ -56,7 +55,6 @@
       rustaceanvim
       lazydev-nvim
       oil-nvim
-      oil-git-nvim
       trouble-nvim
       todo-comments-nvim
       noice-nvim
