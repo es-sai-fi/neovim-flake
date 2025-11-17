@@ -1,6 +1,7 @@
 return {
 	{
 		"oil-git.nvim",
+		lazy = false,
 		after = function()
 			require("oil-git").setup({
 				highlights = {
