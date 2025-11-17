@@ -34,6 +34,6 @@ return {
 		},
 	},
 	before = function()
-		require("lz.n").trigger_load("icons")
+		require("lz.n").trigger_load("nvim-web-devicons")
 	end,
 }
