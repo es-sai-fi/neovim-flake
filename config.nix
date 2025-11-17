@@ -28,6 +28,7 @@
       tokyonight-nvim
       snacks-nvim
       which-key-nvim
+      oil-nvim
       (nvim-treesitter.withPlugins (p: [
         p.nix
         p.python
@@ -44,10 +45,10 @@
     ];
 
     opt = with pkgs.vimPlugins; [
+      oil-git-nvim
       luasnip
       rustaceanvim
       lazydev-nvim
-      oil-nvim
       trouble-nvim
       todo-comments-nvim
       noice-nvim
