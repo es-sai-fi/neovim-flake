@@ -43,14 +43,7 @@
       ]))
     ];
 
-    startAttrs = {
-      "plenary.nvim" = null;
-      "nui.nvim" = null;
-    };
-
     opt = with pkgs.vimPlugins; [
-      plenary-nvim
-      nui-nvim
       luasnip
       rustaceanvim
       lazydev-nvim
