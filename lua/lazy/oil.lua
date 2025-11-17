@@ -2,7 +2,7 @@ return {
 	"oil.nvim",
 	cmd = "Oil",
 	keys = {
-		{ "<leader>e", "<CMD>Oil --float .<CR>", desc = "Toggle Oil" },
+		{ "<leader>e", "<CMD>Oil --float<CR>", desc = "Toggle Oil" },
 	},
 	after = function()
 		-- helper function to parse output
@@ -58,7 +58,6 @@ return {
 			default_file_explorer = true,
 			columns = {
 				"icon",
-				"size",
 				"mtime",
 			},
 			skip_confirm_for_simple_edits = true,

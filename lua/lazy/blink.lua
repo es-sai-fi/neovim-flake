@@ -3,10 +3,7 @@ return {
 	after = function()
 		require("blink.cmp").setup({
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
-				per_filetype = {
-					lua = { inherit_defaults = true, "lazydev" },
-				},
+				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
 				providers = {
 					lazydev = {
 						name = "LazyDev",
