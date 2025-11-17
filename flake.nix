@@ -10,22 +10,19 @@
     };
   };
 
-  outputs =
-    {
-      nixpkgs,
-      mnw,
-      neovim-nightly-overlay,
-      self,
-      ...
-    } @inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      packages.${system} = {
-        default = self.packages.${system}.neovim;
-	neovim = mnw.lib.wrap { inherit pkgs inputs; } ./config.nix;
-      };
+  outputs = {
+    nixpkgs,
+    mnw,
+    neovim-nightly-overlay,
+    self,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    packages.${system} = {
+      default = self.packages.${system}.neovim;
+      neovim = mnw.lib.wrap {inherit pkgs inputs;} ./config.nix;
     };
+  };
 }
