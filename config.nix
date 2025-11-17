@@ -44,6 +44,8 @@
     ];
 
     opt = with pkgs.vimPlugins; [
+      lazydev-nvim
+      luasnip
       rustaceanvim
       oil-nvim
       trouble-nvim
