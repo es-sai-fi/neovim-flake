@@ -12,9 +12,9 @@ return {
 			vim.keymap.set(mode, l, r, opts)
 		end
 
-		map("n", "<leader>e", oil.open(), { desc = "Toggle Oil" })
-		map("n", "<leader>E", oil.open_float(), { desc = "Toggle Oil (Floating)" })
-		map("n", "<leader>q", oil.close(), { desc = "Close Oil" })
+		map("n", "<leader>e", oil.open, { desc = "Toggle Oil" })
+		map("n", "<leader>E", oil.open_float, { desc = "Toggle Oil (Floating)" })
+		map("n", "<leader>q", oil.close, { desc = "Close Oil" })
 
 		-- helper function to parse output
 		local function parse_output(proc)
