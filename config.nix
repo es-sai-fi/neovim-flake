@@ -49,7 +49,7 @@
     };
 
     opt = with pkgs.vimPlugins; [
-      plenary.nvim
+      plenary-nvim
       nui-nvim
       luasnip
       rustaceanvim
