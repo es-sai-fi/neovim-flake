@@ -1,12 +1,16 @@
+local function augroup(name)
+  vim.api.nvim_create_augroup(name, { clear = true })
+end
+
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+	group = augroup("highlight_yank", { clear = true }),
 	callback = function()
 		(vim.hl or vim.highlight).on_yank()
 	end,
 })
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	group = vim.api.nvim_create_augroup("auto_create_dir"),
+	group = augroup("auto_create_dir", { clear = true }),
 	callback = function(event)
 		if event.match:match("^%w%w+:[\\/][\\/]") then
 			return
