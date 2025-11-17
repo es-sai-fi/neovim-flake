@@ -26,7 +26,6 @@
     start = with pkgs.vimPlugins; [
       lz-n
       tokyonight-nvim
-      lazydev-nvim
       snacks-nvim
       which-key-nvim
       (nvim-treesitter.withPlugins (p: [
@@ -44,9 +43,17 @@
       ]))
     ];
 
+    startAttrs = {
+      "plenary.nvim" = null;
+      "nui-nvim" = null;
+    };
+
     opt = with pkgs.vimPlugins; [
+      plenary.nvim
+      nui-nvim
       luasnip
       rustaceanvim
+      lazydev-nvim
       oil-nvim
       oil-git-nvim
       trouble-nvim

@@ -2,7 +2,7 @@ return {
 	"nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	before = function()
-		require("lz.n").trigger_load("blink")
+		require("lz.n").trigger_load("blink.cmp")
 	end,
 	after = function()
 		vim.lsp.enable("lua_ls")

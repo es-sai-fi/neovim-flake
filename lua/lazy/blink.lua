@@ -1,7 +1,7 @@
 return {
 	"blink.cmp",
 	before = function()
-		require("lz.n").trigger_load("lazydev")
+		require("lz.n").trigger_load("lazydev.nvim")
 	end,
 	after = function()
 		require("blink.cmp").setup({
