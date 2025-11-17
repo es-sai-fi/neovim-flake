@@ -24,7 +24,4 @@ return {
 			show_help = "<f1>",
 		},
 	},
-	beforeAll = function()
-		vim.g.loaded_netrwPlugin = 1
-	end,
 }

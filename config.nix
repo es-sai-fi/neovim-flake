@@ -29,7 +29,6 @@
       snacks-nvim
       which-key-nvim
       oil-nvim
-
       oil-git-nvim
       (nvim-treesitter.withPlugins (p: [
         p.nix

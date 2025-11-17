@@ -1,3 +1,29 @@
+local disabled_builtins = {
+	"gzip",
+	"zip",
+	"zipPlugin",
+	"tar",
+	"tarPlugin",
+	"getscript",
+	"getscriptPlugin",
+	"vimball",
+	"vimballPlugin",
+	"2html_plugin",
+	"matchit",
+	"matchparen",
+	"logiPat",
+	"rrhelper",
+	"netrw",
+	"netrwPlugin",
+	"tutor",
+	"spellfile_plugin",
+	"editorconfig",
+}
+
+for _, plugin in ipairs(disabled_builtins) do
+	vim.g["loaded_" .. plugin] = 1
+end
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 

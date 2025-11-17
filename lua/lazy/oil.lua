@@ -77,7 +77,6 @@ return {
 				default_file_explorer = true,
 				columns = {
 					"icon",
-					"mtime",
 				},
 				skip_confirm_for_simple_edits = true,
 				view_options = {
