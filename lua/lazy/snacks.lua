@@ -572,9 +572,6 @@ return {
 			indent = {
 				enabled = true,
 				only_scope = true,
-				scope = {
-					char = "╎",
-				},
 			},
 			input = { enabled = true },
 			notifier = {
