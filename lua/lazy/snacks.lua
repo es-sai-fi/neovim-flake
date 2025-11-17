@@ -559,7 +559,7 @@ return {
 				},
 			},
 			explorer = { enabled = false },
-			indent = { enabled = true },
+			indent = { enabled = true, char = "╎", only_scope = true },
 			input = { enabled = true },
 			notifier = {
 				enabled = true,
