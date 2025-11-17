@@ -1,3 +1,0 @@
-return {
-	"nui.nvim",
-}
