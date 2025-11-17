@@ -8,12 +8,12 @@ return {
 			go = { "golangcilint" },
 			rust = { "clippy" },
 			python = { "ruff" },
-			javascript = { "biome" },
-			typescript = { "biome" },
-			json = { "biome" },
-			jsonc = { "biome" },
-			html = { "biome" },
-			css = { "biome" },
+			javascript = { "biomejs" },
+			typescript = { "biomejs" },
+			json = { "biomejs" },
+			jsonc = { "biomejs" },
+			html = { "biomejs" },
+			css = { "biomejs" },
 			nix = { "statix" },
 		}
 
