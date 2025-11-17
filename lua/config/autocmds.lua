@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	group = augroup("auto_create_dir"),
+	group = vim.api.nvim_create_augroup("auto_create_dir"),
 	callback = function(event)
 		if event.match:match("^%w%w+:[\\/][\\/]") then
 			return
