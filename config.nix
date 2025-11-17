@@ -45,7 +45,7 @@
 
     startAttrs = {
       "plenary.nvim" = null;
-      "nui-nvim" = null;
+      "nui.nvim" = null;
     };
 
     opt = with pkgs.vimPlugins; [
