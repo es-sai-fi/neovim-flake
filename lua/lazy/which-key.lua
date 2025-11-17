@@ -24,7 +24,7 @@ return {
 					{ "<leader>p", group = "picker" },
 					{ "<leader>f", group = "files/find" },
 					{ "<leader>g", group = "git" },
-					{ "<leader>g", group = "hunks" },
+					{ "<leader>gh", group = "hunks" },
 					{ "<leader>u", group = "ui" },
 					{ "<leader>y", group = "yazi" },
 					{ "<leader>x", group = "diagnostics" },
