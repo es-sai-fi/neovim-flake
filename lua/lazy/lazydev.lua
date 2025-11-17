@@ -1,6 +1,6 @@
 return {
 	"folke/lazydev.nvim",
-	ft = "lua",
+	lazy = false,
 	after = function()
 		require("lazydev").setup({
 			signature = { enabled = true },
