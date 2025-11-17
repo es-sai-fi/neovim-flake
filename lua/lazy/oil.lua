@@ -4,11 +4,23 @@ return {
 	keys = {
 		{ "<leader>e", "<CMD>Oil<CR>", desc = "Toggle Oil" },
 		{ "<leader>E", "<CMD>Oil --float<CR>", desc = "Toggle Oil (Floating)" },
+		{ "<leader>q", "<CMD>Oil --close<CR>", desc = "Close Oil" },
 	},
 	before = function()
 		require("lz.n").trigger_load("oil-git.nvim")
 	end,
 	after = function()
+		local oil = require("oil")
+
+		local function map(mode, l, r, opts)
+			opts = opts or {}
+			vim.keymap.set(mode, l, r, opts)
+		end
+
+		map("n", "<leader>e", oil.open(), { desc = "Toggle Oil" })
+		map("n", "<leader>E", oil.open_float(), { desc = "Toggle Oil (Floating)" })
+		map("n", "<leader>q", oil.close(), { desc = "Close Oil" })
+
 		-- helper function to parse output
 		local function parse_output(proc)
 			local result = proc:wait()
@@ -58,7 +70,7 @@ return {
 			orig_refresh(...)
 		end
 
-		require("oil").setup({
+		oil.setup({
 			default_file_explorer = true,
 			columns = {
 				"icon",
