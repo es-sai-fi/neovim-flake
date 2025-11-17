@@ -4,7 +4,7 @@ return {
 	before = function()
 		local lzn = require("lz.n")
 
-		lzn.trigger_load("nui-nvim")
+		lzn.trigger_load("nui.nvim")
 		lzn.trigger_load("nvim-notify")
 	end,
 	after = function()
