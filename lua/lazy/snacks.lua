@@ -522,6 +522,16 @@ return {
 		lzn.trigger_load("mini.icons")
 	end,
 	after = function()
+		-- LSP-Integrated file renaming for Oil
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "OilActionsPost",
+			callback = function(event)
+				if event.data.actions[1].type == "move" then
+					Snacks.rename.on_rename_file(event.data.actions[1].src_url, event.data.actions[1].dest_url)
+				end
+			end,
+		})
+
 		require("snacks").setup({
 			bigfile = { enabled = true },
 			dashboard = {
