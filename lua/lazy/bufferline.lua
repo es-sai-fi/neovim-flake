@@ -23,9 +23,7 @@ return {
 		{ "]B", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
 	},
 	after = function()
-		local bufferline = require("bufferline")
-
-		bufferline.setup({
+		require("bufferline").setup({
 			options = {
 				always_show_bufferline = false,
 			},

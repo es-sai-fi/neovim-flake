@@ -516,9 +516,7 @@ return {
 		})
 	end,
 	before = function()
-		local lzn = require("lz.n")
-
-		lzn.trigger_load("icons")
+		require("lz.n").trigger_load("icons")
 	end,
 	after = function()
 		require("snacks").setup({

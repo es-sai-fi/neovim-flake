@@ -8,9 +8,7 @@ return {
 		lzn.trigger_load("nvim-notify")
 	end,
 	after = function()
-		local noice = require("noice")
-
-		noice.setup({
+		require("noice").setup({
 			presets = {
 				command_palette = false,
 			},

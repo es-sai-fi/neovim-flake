@@ -49,7 +49,6 @@
       rustaceanvim
       oil-nvim
       trouble-nvim
-      mini-hipatterns
       todo-comments-nvim
       noice-nvim
       nvim-notify

@@ -11,9 +11,7 @@ return {
 		},
 	},
 	after = function()
-		local wk = require("which-key")
-
-		wk.setup({
+		require("which-key").setup({
 			delay = 0,
 			preset = "helix",
 			spec = {
