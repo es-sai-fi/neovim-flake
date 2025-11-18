@@ -25,7 +25,8 @@ return {
 	after = function()
 		require("bufferline").setup({
 			options = {
-				always_show_bufferline = false,
+				auto_toggle_bufferline = true,
+				separator_style = "slant",
 			},
 		})
 	end,
