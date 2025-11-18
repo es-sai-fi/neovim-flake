@@ -68,24 +68,22 @@
     ];
   };
 
-  extraBinPath = builtins.attrValues {
-    inherit
-      (pkgs)
-      alejandra
-      nil
-      statix
-      lua-language-server
-      stylua
-      basedpyright
-      ruff
-      typescript-language-server
-      biome
-      rust-analyzer
-      clippy
-      rustfmt
-      golangci-lint
-      gopls
-      gofumpt
-      ;
-  };
+  extraBinPath = with pkgs; [
+    alejandra
+    nil
+    statix
+    lua-language-server
+    stylua
+    basedpyright
+    ruff
+    typescript-language-server
+    biome
+    rust-analyzer
+    clippy
+    rustfmt
+    golangci-lint
+    gopls
+    gofumpt
+    llvmPackages_20.clang-tools
+  ];
 }

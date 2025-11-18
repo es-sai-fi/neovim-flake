@@ -10,6 +10,7 @@ return {
 		vim.lsp.enable("gopls")
 		vim.lsp.enable("basedpyright")
 		vim.lsp.enable("ts_ls")
+		vim.lsp.enable("clangd")
 		vim.lsp.inlay_hint.enable(true)
 		vim.diagnostic.config({
 			virtual_text = {
