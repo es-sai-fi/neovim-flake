@@ -84,6 +84,6 @@
     golangci-lint
     gopls
     gofumpt
-    llvmPackages_20.clang-tools
+    clang-tools
   ];
 }
