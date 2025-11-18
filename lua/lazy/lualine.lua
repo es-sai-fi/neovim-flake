@@ -10,6 +10,7 @@ return {
 				disabled_filetypes = { statusline = { "snacks_dashboard" } },
 			},
 			extesions = { "oil" },
+			theme = "gruvbox-material",
 		})
 	end,
 }
