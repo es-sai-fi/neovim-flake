@@ -86,3 +86,7 @@ opt.completeopt = { "menu", "menuone", "noselect" }
 opt.shortmess:append("c")
 opt.scrolloff = 4
 opt.hidden = false
+
+if vim.g.neovide then
+	vim.g.neovide_cursor_animation_length = 0.06
+end
