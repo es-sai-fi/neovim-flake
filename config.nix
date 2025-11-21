@@ -29,6 +29,7 @@
       snacks-nvim
       which-key-nvim
       oil-nvim
+      luasnip
       (nvim-treesitter.withPlugins (p: [
         p.nix
         p.python
@@ -45,7 +46,6 @@
     ];
 
     opt = with pkgs.vimPlugins; [
-      luasnip
       rustaceanvim
       lazydev-nvim
       trouble-nvim
