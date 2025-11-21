@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 local full_screen = 191
 
 -- default status column, simply 2 spaces
-local statuscolumn = "  "
+local statuscolumn = "%r"
 -- status column if only one buffer is open
 -- (full_screen - text width) / 2
 local statuscolumn_wide = string.rep(" ", (full_screen - 100) / 2) .. statuscolumn
