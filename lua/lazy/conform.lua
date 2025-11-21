@@ -4,6 +4,11 @@ return {
 	after = function()
 		local conform = require("conform")
 
+		local function map(mode, l, r, opts)
+			opts = opts or {}
+			vim.keymap.set(mode, l, r, opts)
+		end
+
 		conform.setup({
 			formatters_by_ft = {
 				c = { "clang-format" },
@@ -26,7 +31,7 @@ return {
 			},
 		})
 
-		vim.keymap.set({ "n", "v" }, "<leader>cf", function()
+		map({ "n", "v" }, "<leader>cf", function()
 			conform.format({
 				lsp_fallback = true,
 				async = false,

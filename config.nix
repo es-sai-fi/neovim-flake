@@ -46,6 +46,7 @@
 
     opt = with pkgs.vimPlugins; [
       luasnip
+      friendly-snippets
       rustaceanvim
       lazydev-nvim
       trouble-nvim
