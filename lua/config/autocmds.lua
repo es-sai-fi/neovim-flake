@@ -3,14 +3,14 @@ local function augroup(name)
 end
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = augroup("highlight_yank", { clear = true }),
+	group = augroup("highlight_yank"),
 	callback = function()
 		(vim.hl or vim.highlight).on_yank()
 	end,
 })
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	group = augroup("auto_create_dir", { clear = true }),
+	group = augroup("auto_create_dir"),
 	callback = function(event)
 		if event.match:match("^%w%w+:[\\/][\\/]") then
 			return
@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 local full_screen = 191
 
 -- default status column, simply 2 spaces
-local statuscolumn = "%r"
+local statuscolumn = " %r"
 -- status column if only one buffer is open
 -- (full_screen - text width) / 2
 local statuscolumn_wide = string.rep(" ", (full_screen - 100) / 2) .. statuscolumn
