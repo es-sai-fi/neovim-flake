@@ -37,6 +37,20 @@ return {
 		require("lz.n").trigger_load("nvim-web-devicons")
 	end,
 	after = function()
-		require("trouble").setup()
+		local trouble = require("trouble")
+
+		trouble.setup({
+			models = {
+				symbols = {
+					win = { position = "left" },
+				},
+			},
+		})
+
+		vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+			callback = function()
+				trouble.open("symbols")
+			end,
+		})
 	end,
 }
