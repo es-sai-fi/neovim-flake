@@ -1,6 +1,6 @@
 return {
 	"LuaSnip",
-	lazy = false,
+	event = { "VimEnter" },
 	keys = {
 		{
 			"<C-K>",
