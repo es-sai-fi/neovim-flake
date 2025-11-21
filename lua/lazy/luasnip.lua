@@ -1,5 +1,5 @@
 return {
-	"LuaSnip",
+	"luasnip",
 	lazy = false,
 	keys = {
 		{
