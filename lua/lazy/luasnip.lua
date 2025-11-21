@@ -20,15 +20,14 @@ return {
 				luasnip.expand()
 			end)
 			map({ "i", "s" }, "<C-L>", function()
-				require("luasnip").jump(1)
+				luasnip.jump(1)
 			end)
 			map({ "i", "s" }, "<C-J>", function()
-				require("luasnip").jump(-1)
+				luasnip.jump(-1)
 			end)
 			map({ "i", "s" }, "<C-E>", function()
-				local ls = require("luasnip")
-				if ls.choice_active() then
-					ls.change_choice(1)
+				if luasnip.choice_active() then
+					luasnip.change_choice(1)
 				end
 			end)
 
