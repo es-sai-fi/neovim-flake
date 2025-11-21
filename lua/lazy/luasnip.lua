@@ -1,6 +1,5 @@
 return {
 	"luasnip",
-	lazy = false,
 	keys = {
 		{
 			"<C-K>",
@@ -38,7 +37,4 @@ return {
 			silent = true,
 		},
 	},
-	after = function()
-		require("luasnip").setup()
-	end,
 }
