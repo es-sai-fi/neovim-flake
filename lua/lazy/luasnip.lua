@@ -1,5 +1,6 @@
 return {
 	"luasnip",
+	event = { "VimEnter" },
 	keys = {
 		{
 			"<C-K>",
@@ -37,4 +38,7 @@ return {
 			silent = true,
 		},
 	},
+	after = function()
+		require("luasnip").setup()
+	end,
 }
