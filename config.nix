@@ -45,6 +45,7 @@
     ];
 
     opt = with pkgs.vimPlugins; [
+      virt-column-nvim
       luasnip
       friendly-snippets
       rustaceanvim
