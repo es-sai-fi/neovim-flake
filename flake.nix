@@ -2,10 +2,21 @@
   description = "Neovim flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    mnw.url = "github:Gerg-L/mnw";
+    nixpkgs = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-unstable";
+    };
+    mnw = {
+      type = "github";
+      owner = "Gerg-L";
+      repo = "mnw";
+    };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+      type = "github";
+      owner = "nix-community";
+      repo = "neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

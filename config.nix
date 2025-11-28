@@ -58,7 +58,7 @@
       mini-icons
       nvim-web-devicons
       bufferline-nvim
-      #lualine-nvim
+      lualine-nvim
       gitsigns-nvim
       conform-nvim
       nvim-lint
