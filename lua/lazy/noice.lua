@@ -9,8 +9,19 @@ return {
 	end,
 	after = function()
 		require("noice").setup({
-			presets = {
-				command_palette = false,
+			routes = {
+				{
+					view = "notify",
+					filter = { event = "msg_showmode" },
+				},
+				{
+					filter = {
+						event = "msg_show",
+						kind = "",
+						find = "written",
+					},
+					opts = { skip = false },
+				},
 			},
 		})
 	end,
