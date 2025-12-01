@@ -622,7 +622,6 @@ return {
 							end,
 						})
 					end,
-					require("trouble.sources.snacks").actions,
 				},
 				explorer = { git_status_open = true },
 			},

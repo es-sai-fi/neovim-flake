@@ -36,7 +36,4 @@ return {
 	before = function()
 		require("lz.n").trigger_load("nvim-web-devicons")
 	end,
-	after = function()
-		require("trouble").setup()
-	end,
 }
