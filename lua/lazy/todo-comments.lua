@@ -1,10 +1,27 @@
 return {
 	"todo-comments.nvim",
-	event = { "BufReadPost", "BufNewFile" },
-	before = function()
-		require("lz.n").trigger_load("plenary.nvim")
-	end,
+	event = { "TodoTrouble" },
 	keys = {
+		{
+			"]t",
+			function()
+				require("todo-comments").jump_next()
+			end,
+			desc = "Next Todo Comment",
+		},
+		{
+			"[t",
+			function()
+				require("todo-comments").jump_prev()
+			end,
+			desc = "Previous Todo Comment",
+		},
+		{ "<leader>xt", "<cmd>Trouble todo toggle<cr>", desc = "Todo (Trouble)" },
+		{
+			"<leader>xT",
+			"<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>",
+			desc = "Todo/Fix/Fixme (Trouble)",
+		},
 		{
 			"<leader>st",
 			function()
@@ -20,4 +37,10 @@ return {
 			desc = "Todo/Fix/Fixme",
 		},
 	},
+	before = function()
+		require("lz.n").trigger_load("plenary.nvim")
+	end,
+	after = function()
+		require("todo-comments").setup()
+	end,
 }

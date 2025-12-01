@@ -1,3 +1,4 @@
+require("config.globals")
 require("config.colorscheme")
 require("config.options")
 require("config.autocmds")

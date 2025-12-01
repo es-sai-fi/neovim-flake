@@ -1,11 +1,13 @@
+local flash = require("flash")
+
 return {
 	"flash.nvim",
-  keys = {
+	keys = {
 		{
 			"s",
 			mode = { "n", "x", "o" },
 			function()
-				require("flash").jump()
+				flash.jump()
 			end,
 			desc = "Flash",
 		},
@@ -13,7 +15,7 @@ return {
 			"S",
 			mode = { "n", "x", "o" },
 			function()
-				require("flash").treesitter()
+				flash.treesitter()
 			end,
 			desc = "Flash Treesitter",
 		},
@@ -21,7 +23,7 @@ return {
 			"r",
 			mode = "o",
 			function()
-				require("flash").remote()
+				flash.remote()
 			end,
 			desc = "Remote Flash",
 		},
@@ -29,7 +31,7 @@ return {
 			"R",
 			mode = { "o", "x" },
 			function()
-				require("flash").treesitter_search()
+				flash.treesitter_search()
 			end,
 			desc = "Treesitter Search",
 		},
@@ -37,7 +39,7 @@ return {
 			"<c-s>",
 			mode = { "c" },
 			function()
-				require("flash").toggle()
+				flash.toggle()
 			end,
 			desc = "Toggle Flash Search",
 		},

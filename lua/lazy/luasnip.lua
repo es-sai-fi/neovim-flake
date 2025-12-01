@@ -11,11 +11,6 @@ return {
 		after = function()
 			local luasnip = require("luasnip")
 
-			local function map(mode, l, r, opts)
-				opts = opts or {}
-				vim.keymap.set(mode, l, r, opts)
-			end
-
 			map({ "i" }, "<C-K>", function()
 				luasnip.expand()
 			end)

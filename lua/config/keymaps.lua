@@ -1,8 +1,3 @@
-local function map(mode, l, r, opts)
-	opts = opts or {}
-	vim.keymap.set(mode, l, r, opts)
-end
-
 -- Snacks picker
 map("n", "<leader>fh", function()
 	require("snacks.picker").files({
