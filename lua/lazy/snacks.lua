@@ -575,7 +575,11 @@ return {
 					{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
 				},
 			},
-			explorer = { enabled = true, git_status_open = true },
+			explorer = {
+				enabled = true,
+				replace_netrw = true,
+				trash = false,
+			},
 			indent = {
 				enabled = true,
 				only_scope = true,
@@ -592,6 +596,10 @@ return {
 						keys = {
 							["<a-s>"] = { "flash", mode = { "n", "i" } },
 							["s"] = { "flash" },
+							["<c-t>"] = {
+								"trouble_open",
+								mode = { "n", "i" },
+							},
 						},
 					},
 				},
@@ -614,7 +622,9 @@ return {
 							end,
 						})
 					end,
+					require("trouble.sources.snacks").actions,
 				},
+				explorer = { git_status_open = true },
 			},
 			quickfile = { enabled = true },
 			scope = { enabled = true },
