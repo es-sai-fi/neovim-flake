@@ -39,6 +39,13 @@ return {
 			end,
 			desc = "Notification History",
 		},
+		{
+			"<leader>e",
+			function()
+				Snacks.explorer()
+			end,
+			desc = "File Explorer",
+		},
 		-- find
 		{
 			"<leader>fb",
@@ -568,7 +575,7 @@ return {
 					{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
 				},
 			},
-			explorer = { enabled = false },
+			explorer = { enabled = true, git_status_open = true },
 			indent = {
 				enabled = true,
 				only_scope = true,
