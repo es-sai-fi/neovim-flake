@@ -32,3 +32,6 @@ end, { desc = "Delete Buffer" })
 map("n", "<leader>bo", function()
 	Snacks.bufdelete.other()
 end, { desc = "Delete Other Buffers" })
+
+-- Yank/Put
+map("x", "p", '"_dP', { noremap = true })

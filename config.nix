@@ -28,7 +28,6 @@
       gruvbox-material
       snacks-nvim
       which-key-nvim
-      oil-nvim
       (nvim-treesitter.withPlugins (p: [
         p.nix
         p.python
@@ -63,7 +62,6 @@
       conform-nvim
       nvim-lint
       flash-nvim
-      yazi-nvim
       mini-surround
       mini-pairs
       nvim-lspconfig
