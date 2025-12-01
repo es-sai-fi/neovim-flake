@@ -134,10 +134,6 @@ return {
 			workspace = {
 				checkThirdParty = false,
 			},
-			diagnostics = {
-				"map",
-				"augroup",
-			},
 		})
 	end,
 }
