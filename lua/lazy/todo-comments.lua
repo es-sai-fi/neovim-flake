@@ -1,6 +1,6 @@
 return {
 	"todo-comments.nvim",
-	event = { "TodoTrouble" },
+	event = { "BufReadPost", "BufNewFile" },
 	keys = {
 		{
 			"]t",
