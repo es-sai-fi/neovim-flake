@@ -81,6 +81,7 @@
     rust-analyzer
     clippy
     rustfmt
+    go
     golangci-lint
     gopls
     gofumpt
